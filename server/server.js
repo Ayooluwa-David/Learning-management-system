@@ -19,7 +19,7 @@ app.use(cors())
 
 //Routes
 
-app.get('/', (req, res)=> res.send("API Working"))
+app.get('/', (req, res)=> res.send("My API Working"))
 app.post('/clerk', express.json(), clerkWebhooks)
 
 // Port
