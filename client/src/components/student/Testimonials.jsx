@@ -24,7 +24,7 @@ const Testimonials = () => {
                         
                       </div>   
 
-                          <div p-5 pb-7>
+                          <div className='p-5 pb-7'>
                               <div className='flex gap-0.5'>{[...Array(5)].map((_, i) => (
                                       <img key={i} src={i < Math.floor(testimonial.rating) ? assets.star : assets.star_blank } alt="star" />
                               ))}</div>
