@@ -2,7 +2,7 @@ import { createContext, useState, useEffect} from "react";
 import { assets, dummyCourses } from "../../assets/assets";
 import { useNavigate } from "react-router-dom";
 import humanizeDuration from "humanize-duration";
-
+import {useAuth, useUser } from "@clerk/react" 
 
 
 
@@ -15,6 +15,13 @@ import humanizeDuration from "humanize-duration";
 export const AppContextProvider = (props) => {
     const currency  = import.meta.env.VITE_CURRENCY
     const navigate = useNavigate()
+
+    const  {getToken} = useAuth()
+    const {user} = useUser()
+
+
+
+
     const [allCourses, setAllCourses] = useState([])
     const [enrolledCourses, setEnrolledCourses] = useState([])
 
@@ -97,6 +104,18 @@ useEffect(() => {
      fetchAllCourses()
      fetchUserEnrolledCourses()
 }, [])
+
+const logToken = async () => {
+    console.log(await getToken())
+}
+
+useEffect(() => {
+    if(user) {
+
+        logToken()
+
+    }
+}, [user]) 
 
 
     const value = {
