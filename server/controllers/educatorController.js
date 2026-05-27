@@ -2,7 +2,7 @@
 import { clerkClient } from '@clerk/express'
 
 // update role to educator
-export const updateRoleToEducator = async () => {
+export const updateRoleToEducator = async (req, res) => {
       try {
            const userId = req.auth.userId
 
@@ -19,3 +19,8 @@ export const updateRoleToEducator = async () => {
            res.json({success: false, message: error.message})
       }
 }
+
+
+
+
+

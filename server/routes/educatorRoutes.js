@@ -6,7 +6,7 @@ const educatorRouter = express.Router()
 
 // Add Educator Role
 
-educatorRouter.get('update-role', updateRoleToEducator)
+educatorRouter.get('/update-role', updateRoleToEducator)
 
 
 
