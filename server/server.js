@@ -7,7 +7,7 @@ import educatorRouter from './routes/educatorRoutes.js'
 import { clerkMiddleware } from '@clerk/express'
 
 
-// initialize express
+// initialize express   
 
 const app = express()
 
@@ -26,7 +26,7 @@ app.get('/', (req, res)=> res.send("My API Working"))
 app.post('/clerk', express.json(), clerkWebhooks)
 app.use('/api/educator', express.json(), educatorRouter)
 // Port
-
+ 
 const PORT = process.env.PORT || 5000   
 
 
